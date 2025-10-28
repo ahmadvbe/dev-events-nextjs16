@@ -1,4 +1,4 @@
-{
+{//config file for TS 12:00
   "compilerOptions": {
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
