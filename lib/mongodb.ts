@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
+//2:03:30
 
-// Define the connection cache type
+//2:03:55
+// Define the connection cache type - next js by default is nt keeping a consistent connection 2:04:00
+//everytime we make a server action call it will spin up the server for that amount of time needed
+//then the next time we re trying to call it we dnt wana generate a whole new cnx rather we wana grab the cnx from the cache 
 type MongooseCache = {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -29,6 +33,7 @@ if (!global.mongoose) {
  */
 async function connectDB(): Promise<typeof mongoose> {
   // Return existing connection if available
+  ///then the next time we re trying to call it we dnt wana generate a whole new cnx rather we wana grab the cnx from the cache 
   if (cached.conn) {
     return cached.conn;
   }
@@ -45,7 +50,7 @@ async function connectDB(): Promise<typeof mongoose> {
       bufferCommands: false, // Disable Mongoose buffering
     };
 
-    // Create a new connection promise
+    // Create a new connection promise -- connecting us to a db using the MONGODB URI from our .env
     cached.promise = mongoose.connect(MONGODB_URI!, options).then((mongoose) => {
       return mongoose;
     });

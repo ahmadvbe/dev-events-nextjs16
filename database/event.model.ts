@@ -1,6 +1,7 @@
 import { Schema, model, models, Document } from 'mongoose';
 
-// TypeScript interface for Event document
+//2:06:31  2:07:15
+// TypeScript interface for Event document 
 export interface IEvent extends Document {
   title: string;
   slug: string;
@@ -20,7 +21,7 @@ export interface IEvent extends Document {
   updatedAt: Date;
 }
 
-const EventSchema = new Schema<IEvent>(
+const EventSchema = new Schema<IEvent>( 
   {
     title: {
       type: String,
@@ -109,7 +110,7 @@ const EventSchema = new Schema<IEvent>(
   }
 );
 
-// Pre-save hook for slug generation and data normalization
+// Pre-save hook for slug generation and data normalization- 2:07:50
 EventSchema.pre('save', function (next) {
   const event = this as IEvent;
 

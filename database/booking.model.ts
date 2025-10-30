@@ -1,7 +1,7 @@
 import { Schema, model, models, Document, Types } from 'mongoose';
 import Event from './event.model';
 
-// TypeScript interface for Booking document
+// TypeScript interface for Booking document. -- 2:08:20   
 export interface IBooking extends Document {
   eventId: Types.ObjectId;
   email: string;
@@ -13,10 +13,10 @@ const BookingSchema = new Schema<IBooking>(
   {
     eventId: {
       type: Schema.Types.ObjectId,
-      ref: 'Event',
+      ref: 'Event', //--reference to a real event in our DB  
       required: [true, 'Event ID is required'],
     },
-    email: {
+    email: { //2:08:26
       type: String,
       required: [true, 'Email is required'],
       trim: true,
@@ -36,7 +36,8 @@ const BookingSchema = new Schema<IBooking>(
   }
 );
 
-// Pre-save hook to validate events exists before creating booking
+//VALIDATION FUNCS
+// Pre-save hook to validate events exists before creating booking 2:08:32
 BookingSchema.pre('save', async function (next) {
   const booking = this as IBooking;
 
@@ -60,6 +61,8 @@ BookingSchema.pre('save', async function (next) {
   next();
 });
 
+
+//INDEXES
 // Create index on eventId for faster queries
 BookingSchema.index({ eventId: 1 });
 
