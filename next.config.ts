@@ -4,8 +4,13 @@ const nextConfig: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
+
+      // 3:29:00 uswe cache will now let you cahce results during built time or run time for a ceratin cutomzied time imrpoving speed, reducing load  
+      //     3:29:20 manually enable the useCache within the next js config
     cacheComponents: true,
-    images: {
+
+    
+    images: { //2:29:05 Cloudinary upload
         remotePatterns: [
             {
                 protocol: 'https',
