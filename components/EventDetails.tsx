@@ -41,7 +41,7 @@ const EventTags = ({ tags }: { tags: string[] }) => (
 )
 
 const EventDetails = async ({ params }: { params: Promise<string> }) => {
-        //3:31:15
+        //3:31:15 3:47:15
     'use cache' //turn on the use cache directive
     cacheLife('hours'); //3:31:30 how long u wana revalidate the data - this component will be cached for hours
 
@@ -149,7 +149,7 @@ const EventDetails = async ({ params }: { params: Promise<string> }) => {
                             <p className="text-sm">Be the first to book your spot!</p>
                         )}
 
-                        <BookEvent //3:10:10
+                        <BookEvent //3:10:10 3:43:50
                             eventId={event._id} slug={event.slug} />
                     </div>
                 </aside>

@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 //13:30 allowing u to cinfig ur next js features
 const nextConfig: NextConfig = {
+
     typescript: {
+
+              //## 3:54:00 Deployment -- we dnt wont TS errors warning  to break the build
         ignoreBuildErrors: true,
     },
 

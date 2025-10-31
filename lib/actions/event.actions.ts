@@ -26,7 +26,7 @@ export const  getSimilarEventsBySlug = async (slug: string) => { //focus on the 
         return await Event.find({ 
              _id: { $ne: event._id }, //not be euqal of the event found above
              tags: { $in: event.tags } })//by using the tags we re gonna know which events r similar
-                                 .lean(); 
+                                 .lean();  //return it into a basic JS format not as a mongodb doc
                 //if the event we re searching for includes any tags that the previosly found event has
 
                 
