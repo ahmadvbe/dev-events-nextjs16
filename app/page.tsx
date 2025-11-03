@@ -15,8 +15,6 @@ const Page = async () => {
     'use cache';
     cacheLife('hours')
 
-
-
             // 2:39:20 nextjs/app/page.tsx
             //     call the get api route to get all the events created so far
      const response = await fetch(`${BASE_URL}/api/events`); //2:40:00 4:05:55 app deployement issue
