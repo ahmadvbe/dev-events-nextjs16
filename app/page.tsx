@@ -1,5 +1,5 @@
 import ExploreBtn from "@/components/ExploreBtn";
-import events from "@/lib/constants";
+// import events from "@/lib/constants";
 import EventCard from "@/components/EventCard";
 import {IEvent} from "@/database"; //these r the real events not the dummy ones from the lib/constants file
 import {cacheLife} from "next/cache";
@@ -19,8 +19,8 @@ const Page = async () => {
 
             // 2:39:20 nextjs/app/page.tsx
             //     call the get api route to get all the events created so far
-    //  const response = await fetch(`${BASE_URL}/api/events`); //2:40:00 4:05:55 app deployement issue
-    //  const { events } = await response.json(); //1:31:00  2:40:30 destructure the actual evenets from the data
+     const response = await fetch(`${BASE_URL}/api/events`); //2:40:00 4:05:55 app deployement issue
+     const { events } = await response.json(); //1:31:00  2:40:30 destructure the actual evenets from the data
 
     return (
         <section //1:16:16
