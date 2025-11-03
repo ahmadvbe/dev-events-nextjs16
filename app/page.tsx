@@ -37,7 +37,7 @@ const Page = async () => {
 
                 <ul className="events">
                     {events && events.length > 0 && 
-                            events.map((event) => ( //automatic return 1:25:05  replace by (event: IEvent) when dealting with the real events from DB
+                            events.map((event: IEvent) => ( //automatic return 1:25:05  replace by (event: IEvent) when dealting with the real events from DB
                         <li key={event.title} 
                             className="list-none" //3:24:30 remove the dots 
                             >
