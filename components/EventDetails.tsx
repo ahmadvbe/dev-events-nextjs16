@@ -40,12 +40,17 @@ const EventTags = ({ tags }: { tags: string[] }) => (
     </div>
 )
 
-const EventDetails = async ({ params }: { params: Promise<string> }) => {
+const EventDetails = async ({ params }: { params: Promise<string> }) => { 
+    //4:02:47 with the new fix with vercel issue
+    //4:03:15 we hve extracted all the all the logic and presentation form the event details page    
+    //to the event details component
+
+
         //3:31:15 3:47:15
     'use cache' //turn on the use cache directive
     cacheLife('hours'); //3:31:30 how long u wana revalidate the data - this component will be cached for hours
 
-    const slug = await params;
+    const slug = await params;  //4:03:10
 
     let event;
     try {
